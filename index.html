@@ -8,8 +8,6 @@
 <style>
 * { box-sizing: border-box; }
 
-html { scroll-behavior: smooth; }
-
 body {
 margin: 0;
 font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
@@ -61,29 +59,27 @@ color: #93c5fd;
 /* ================= HEADER ================= */
 
 header {
-background-image:
-linear-gradient(rgba(15,23,42,0.65), rgba(15,23,42,0.65)),
-url("lines.jpeg");
-background-size: cover;
-background-position: center;
+background: linear-gradient(
+rgba(2,6,23,0.75),
+rgba(2,6,23,0.75)
+), url("lines.jpeg") center/cover no-repeat;
 color: #fff;
-padding: 120px 24px;
+padding: 110px 24px;
 text-align: center;
 }
 
 header img {
 max-width: 320px;
-margin: 0 auto 36px;
-display: block;
+margin-bottom: 36px;
 padding: 16px;
-background: rgba(255,255,255,0.92);
 border-radius: 10px;
+background: rgba(255,255,255,0.92);
 }
 
 header p {
-font-size: 19px;
 max-width: 720px;
-margin: 0 auto 28px;
+margin: 0 auto 30px;
+font-size: 18px;
 color: #e5e7eb;
 }
 
@@ -91,39 +87,51 @@ color: #e5e7eb;
 display: inline-block;
 background: #2563eb;
 color: #fff;
-padding: 14px 32px;
+padding: 14px 30px;
 border-radius: 6px;
 text-decoration: none;
 font-weight: 600;
 }
 
-/* ================= LAYOUT ================= */
+/* ================= SERVICES ================= */
 
-.container {
-max-width: 1100px;
-margin: 0 auto;
-padding: 60px 24px;
+.services-section {
+text-align: center;
+padding: 90px 24px;
 }
 
-section h2 {
-text-align: center;
-margin-bottom: 50px;
+.services-section h2 {
 font-size: 32px;
+margin-bottom: 50px;
 }
 
 .services-grid {
-max-width: 900px;
+max-width: 1100px;
 margin: 0 auto;
 display: grid;
 grid-template-columns: repeat(2, 1fr);
 gap: 40px;
 }
 
-.card {
-background: #fff;
+.service-card {
+background: #ffffff;
 padding: 36px;
-border-radius: 10px;
-box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+border-radius: 12px;
+text-align: left;
+box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+}
+
+.service-card h3 {
+margin-top: 0;
+font-size: 22px;
+}
+
+.service-card ul {
+padding-left: 18px;
+}
+
+.service-card li {
+margin-bottom: 8px;
 }
 
 /* ================= WHY ================= */
@@ -133,21 +141,28 @@ background: #e5e7eb;
 padding: 80px 24px;
 }
 
+.why .container {
+max-width: 900px;
+margin: 0 auto;
+text-align: center;
+}
+
 /* ================= CONTACT ================= */
 
 .contact {
 background: #0f172a;
 color: #fff;
-padding: 100px 24px;
+padding: 90px 24px;
 }
 
-.contact h2 { color: #fff; }
-
-form {
-max-width: 600px;
+.contact .container {
+max-width: 700px;
+margin: 0 auto;
+text-align: center;
 }
 
-input, textarea {
+form input,
+form textarea {
 width: 100%;
 padding: 14px;
 margin-bottom: 14px;
@@ -156,7 +171,7 @@ border: none;
 font-size: 16px;
 }
 
-button {
+form button {
 background: #2563eb;
 color: #fff;
 padding: 14px 24px;
@@ -184,7 +199,7 @@ text-decoration: none;
 
 /* ================= MOBILE ================= */
 
-@media (max-width: 768px) {
+@media (max-width: 800px) {
 .services-grid {
 grid-template-columns: 1fr;
 }
@@ -208,7 +223,7 @@ grid-template-columns: 1fr;
 
 <!-- HEADER -->
 <header>
-<img src="lotlogic-logo.jpg" alt="LotLogic logo">
+<img src="lotlogic-logo.jpeg" alt="LotLogic logo">
 <p>
 Parking lot striping, sweeping, pressure washing, and maintenance
 done by parking professionals — not just contractors.
@@ -216,65 +231,99 @@ done by parking professionals — not just contractors.
 <a class="cta" href="#contact">Get a Quote</a>
 </header>
 
-<div class="container">
-<section>
+<!-- SERVICES -->
+<section class="services-section">
 <h2>What We Do</h2>
 
 <div class="services-grid">
-<div class="card">
+
+<div class="service-card">
 <h3>Parking Lot Striping</h3>
 <p>Clear, durable striping that improves safety and traffic flow.</p>
+<ul>
+<li>New layouts and re-stripes</li>
+<li>ADA-compliant markings</li>
+<li>Fire lanes, curbs, and stencils</li>
+<li>Layouts designed by parking professionals</li>
+</ul>
+<strong>We don’t just paint lines. We design lots that work.</strong>
 </div>
 
-<div class="card">
+<div class="service-card">
 <h3>Sweeping Services</h3>
-<p>Routine and one-time sweeping for commercial properties.</p>
+<p>Routine and one-time sweeping programs for commercial properties.</p>
+<ul>
+<li>Scheduled sweeping programs</li>
+<li>One-time cleanups</li>
+<li>Retail, office, and industrial properties</li>
+<li>Construction and post-event sweeping</li>
+</ul>
 </div>
 
-<div class="card">
+<div class="service-card">
 <h3>Pressure Washing</h3>
-<p>Oil removal, sidewalks, storefronts, and service areas.</p>
+<p>Targeted cleaning that removes buildup and improves appearance.</p>
+<ul>
+<li>Oil and grease removal</li>
+<li>Sidewalks and drive lanes</li>
+<li>Storefronts and entryways</li>
+<li>Dumpster pads and service areas</li>
+</ul>
 </div>
 
-<div class="card">
+<div class="service-card">
 <h3>Lot Maintenance & Repairs</h3>
-<p>Touch-ups, signage, and preventative maintenance.</p>
+<p>Ongoing care to keep your property functional and compliant.</p>
+<ul>
+<li>Curb and line touch-ups</li>
+<li>Signage and wheel stop adjustments</li>
+<li>Minor asphalt repairs</li>
+<li>Preventive maintenance programs</li>
+</ul>
 </div>
+
 </div>
 </section>
-</div>
 
+<!-- WHY -->
 <div class="why">
 <div class="container">
 <h2>Why LotLogic</h2>
 <p>
-Built by parking professionals who understand real-world operations,
-compliance, and property management needs.
+LotLogic was built by people who’ve managed parking operations firsthand.
+We’ve run garages, managed surface lots, dealt with tenants,
+compliance, complaints, and real-world operational challenges.
+</p>
+<p>
+That experience leads to smarter layouts, better scheduling,
+less disruption, and work that supports how your property actually functions.
 </p>
 <strong>Your lot isn’t just pavement. It’s part of how your property works.</strong>
 </div>
 </div>
 
+<!-- CONTACT -->
 <div class="contact" id="contact">
 <div class="container">
 <h2>Get a Quote</h2>
 
 <form action="https://formsubmit.co/info@lotlogic.io" method="POST">
-<input type="hidden" name="_subject" value="New LotLogic Quote Request">
 <input type="hidden" name="_captcha" value="false">
-
 <input type="text" name="name" placeholder="Name" required>
 <input type="email" name="email" placeholder="Email" required>
 <textarea name="message" rows="5" placeholder="Tell us about your property..." required></textarea>
-
 <button type="submit">Request Quote</button>
 </form>
+
+<p style="margin-top:24px;">
+Call: <strong>303-328-8595</strong><br>
+Email: <a href="mailto:info@lotlogic.io">info@lotlogic.io</a>
+</p>
 </div>
 </div>
 
 <footer>
-© LotLogic LLC · Denver, CO<br>
-<a href="mailto:info@lotlogic.io">info@lotlogic.io</a>
+© LotLogic LLC · Striping · Sweeping · Pressure Washing · Lot Maintenance · Denver, CO
 </footer>
 
 </body>
