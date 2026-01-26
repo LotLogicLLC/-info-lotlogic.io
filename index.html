@@ -18,10 +18,76 @@ background: #f5f7fa;
 line-height: 1.6;
 }
 
-.container {
+/* ================= NAV ================= */
+
+.nav {
+background: #020617;
+padding: 14px 24px;
+}
+
+.nav-container {
 max-width: 1100px;
 margin: 0 auto;
-padding: 60px 24px;
+display: flex;
+justify-content: space-between;
+align-items: center;
+}
+
+.nav-logo {
+color: #fff;
+font-weight: 700;
+text-decoration: none;
+font-size: 20px;
+}
+
+.nav-links {
+list-style: none;
+display: flex;
+gap: 30px;
+margin: 0;
+padding: 0;
+}
+
+.nav-links a {
+color: #e5e7eb;
+text-decoration: none;
+font-weight: 500;
+}
+
+.nav-links a:hover {
+color: #93c5fd;
+}
+
+/* Dropdown */
+.dropdown {
+position: relative;
+}
+
+.dropdown-menu {
+display: none;
+position: absolute;
+top: 100%;
+left: 0;
+background: #020617;
+padding: 12px 0;
+list-style: none;
+min-width: 200px;
+border-radius: 6px;
+z-index: 1000;
+}
+
+.dropdown-menu li a {
+display: block;
+padding: 10px 20px;
+color: #e5e7eb;
+}
+
+.dropdown-menu li a:hover {
+background: #0f172a;
+}
+
+.dropdown:hover .dropdown-menu {
+display: block;
 }
 
 /* ================= HEADER ================= */
@@ -61,10 +127,15 @@ padding: 14px 32px;
 border-radius: 6px;
 text-decoration: none;
 font-weight: 600;
-box-shadow: 0 10px 20px rgba(37,99,235,0.35);
 }
 
-/* ================= SERVICES ================= */
+/* ================= LAYOUT ================= */
+
+.container {
+max-width: 1100px;
+margin: 0 auto;
+padding: 60px 24px;
+}
 
 section h2 {
 text-align: center;
@@ -76,7 +147,7 @@ font-size: 32px;
 max-width: 900px;
 margin: 0 auto;
 display: grid;
-grid-template-columns: repeat(2, 1fr); /* FORCE 2x2 */
+grid-template-columns: repeat(2, 1fr);
 gap: 40px;
 }
 
@@ -87,14 +158,10 @@ border-radius: 10px;
 box-shadow: 0 15px 35px rgba(0,0,0,0.08);
 }
 
-/* ================= WHY ================= */
-
 .why {
 background: #e5e7eb;
 padding: 80px 24px;
 }
-
-/* ================= CONTACT ================= */
 
 .contact {
 background: #0f172a;
@@ -147,7 +214,7 @@ text-decoration: none;
 
 @media (max-width: 768px) {
 .services-grid {
-grid-template-columns: 1fr; /* stack on mobile */
+grid-template-columns: 1fr;
 }
 }
 </style>
@@ -155,6 +222,30 @@ grid-template-columns: 1fr; /* stack on mobile */
 
 <body>
 
+<!-- NAV -->
+<nav class="nav">
+<div class="nav-container">
+<a href="index.html" class="nav-logo">LotLogic</a>
+
+<ul class="nav-links">
+<li><a href="index.html">Home</a></li>
+
+<li class="dropdown">
+<a href="services.html">Services ▾</a>
+<ul class="dropdown-menu">
+<li><a href="services.html#striping">Parking Lot Striping</a></li>
+<li><a href="services.html#sweeping">Sweeping Services</a></li>
+<li><a href="services.html#washing">Pressure Washing</a></li>
+<li><a href="services.html#maintenance">Lot Maintenance</a></li>
+</ul>
+</li>
+
+<li><a href="#contact">Get a Quote</a></li>
+</ul>
+</div>
+</nav>
+
+<!-- HEADER -->
 <header>
 <img src="lotlogic-logo.jpg" alt="LotLogic logo">
 <p>
@@ -165,68 +256,31 @@ done by parking professionals — not just contractors.
 </header>
 
 <div class="container">
-
 <section>
 <h2>Services</h2>
 
 <div class="services-grid">
-
 <div class="card">
 <h3>Parking Lot Striping</h3>
 <p>Clear, durable striping that improves safety and traffic flow.</p>
-<ul>
-<li>New layouts and re-stripes</li>
-<li>ADA-compliant markings</li>
-<li>Fire lanes, curbs, and stencils</li>
-<li>Layouts designed by parking professionals</li>
-</ul>
-<strong>We don’t just paint lines. We design lots that work.</strong>
 </div>
 
 <div class="card">
 <h3>Sweeping Services</h3>
-<ul>
-<li>Scheduled sweeping programs</li>
-<li>One-time cleanups</li>
-<li>Retail, office, and industrial properties</li>
-<li>Construction and post-event sweeping</li>
-</ul>
+<p>Routine and one-time sweeping for commercial properties.</p>
 </div>
 
 <div class="card">
 <h3>Pressure Washing</h3>
-<ul>
-<li>Oil and grease removal</li>
-<li>Sidewalks and drive lanes</li>
-<li>Storefronts and entryways</li>
-<li>Dumpster pads and service areas</li>
-</ul>
+<p>Oil removal, sidewalks, storefronts, and service areas.</p>
 </div>
 
 <div class="card">
 <h3>Lot Maintenance & Repairs</h3>
-<ul>
-<li>Curb and line touch-ups</li>
-<li>Signage and wheel stop adjustments</li>
-<li>Minor asphalt repairs</li>
-<li>Preventive maintenance programs</li>
-</ul>
+<p>Touch-ups, signage, and preventative maintenance.</p>
 </div>
-
 </div>
 </section>
-
-</div>
-
-<div class="why">
-<div class="container">
-<h2>Why LotLogic</h2>
-<p>
-Built by parking professionals who understand real-world operations,
-compliance, and property management needs.
-</p>
-<strong>Your lot isn’t just pavement. It’s part of how your property works.</strong>
-</div>
 </div>
 
 <div class="contact" id="contact">
@@ -243,16 +297,11 @@ compliance, and property management needs.
 
 <button type="submit">Request Quote</button>
 </form>
-
-<p style="margin-top:20px;">
-Or call us directly: <strong>303-328-8595</strong><br>
-Denver, Colorado & surrounding areas
-</p>
 </div>
 </div>
 
 <footer>
-© LotLogic LLC · Striping · Sweeping · Pressure Washing · Lot Maintenance · Denver, CO<br>
+© LotLogic LLC · Denver, CO<br>
 <a href="mailto:info@lotlogic.io">info@lotlogic.io</a>
 </footer>
 
