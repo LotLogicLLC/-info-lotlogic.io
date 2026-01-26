@@ -92,13 +92,16 @@ gap: 30px;
 
 .gallery-item {
 background: #fff;
-border-radius: 10px;
+border-radius: 12px;
 overflow: hidden;
 box-shadow: 0 12px 30px rgba(0,0,0,0.08);
+height: 260px;
 }
 
 .gallery-item img {
 width: 100%;
+height: 100%;
+object-fit: cover;
 display: block;
 }
 
@@ -128,6 +131,10 @@ grid-template-columns: repeat(2, 1fr);
 @media (max-width: 600px) {
 .gallery-grid {
 grid-template-columns: 1fr;
+}
+
+.gallery-item {
+height: 220px;
 }
 }
 </style>
