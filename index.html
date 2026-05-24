@@ -31,10 +31,11 @@ a {
 
 .nav {
   background: #020617;
-  padding: 16px 24px;
+  padding: 18px 28px;
   position: sticky;
   top: 0;
   z-index: 50;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
 }
 
 .nav-container {
@@ -46,15 +47,15 @@ a {
 }
 
 .nav-logo {
-  color: #fff;
-  font-weight: 800;
+  display: flex;
+  align-items: center;
   text-decoration: none;
-  font-size: 22px;
-  letter-spacing: .3px;
 }
 
-.nav-logo span {
-  color: #facc15;
+.nav-logo img {
+  height: 42px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
@@ -83,7 +84,7 @@ header {
     linear-gradient(rgba(2,6,23,0.78), rgba(2,6,23,0.78)),
     url("lines.jpeg") center/cover no-repeat;
   color: #fff;
-  padding: 110px 24px 95px;
+  padding: 100px 24px 90px;
   text-align: center;
 }
 
@@ -92,9 +93,11 @@ header {
   margin: 0 auto;
 }
 
-header img {
-  max-width: 300px;
-  margin-bottom: 28px;
+.hero-logo {
+  max-width: 220px;
+  width: 100%;
+  height: auto;
+  margin-bottom: 24px;
 }
 
 header h1 {
@@ -381,6 +384,10 @@ footer {
     gap: 14px;
   }
 
+  .nav-logo img {
+    height: 46px;
+  }
+
   .nav-links {
     gap: 18px;
     flex-wrap: wrap;
@@ -388,7 +395,11 @@ footer {
   }
 
   header {
-    padding: 80px 20px;
+    padding: 75px 20px;
+  }
+
+  .hero-logo {
+    max-width: 190px;
   }
 
   header h1 {
@@ -421,7 +432,10 @@ footer {
 
 <nav class="nav">
   <div class="nav-container">
-    <a href="index.html" class="nav-logo">Lot<span>Logic</span></a>
+    <a href="index.html" class="nav-logo">
+      <img src="lotlogic-logo.png" alt="LotLogic Logo">
+    </a>
+
     <ul class="nav-links">
       <li><a href="index.html">Home</a></li>
       <li><a href="gallery.html">Gallery</a></li>
@@ -433,7 +447,7 @@ footer {
 
 <header>
   <div class="hero-inner">
-    <img src="lotlogic-logo.jpg" alt="LotLogic logo">
+    <img class="hero-logo" src="lotlogic-logo.png" alt="LotLogic Logo">
 
     <h1>Professional Parking Lot Striping & Maintenance</h1>
 
