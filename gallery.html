@@ -2,203 +2,326 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<title>LotLogic | Previous Work</title>
+<title>LotLogic Gallery | Recent Projects</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 
 <style>
-* { box-sizing: border-box; }
 
-body {
-margin: 0;
-font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-color: #1f2933;
-background: #f5f7fa;
-line-height: 1.6;
+* {
+  box-sizing: border-box;
 }
 
-/* ================= NAV ================= */
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  background: #f5f7fa;
+  color: #1f2933;
+}
+
+/* NAV */
 
 .nav {
-background: #020617;
-padding: 14px 24px;
+  background: #020617;
+  padding: 10px 22px;
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .nav-container {
-max-width: 1100px;
-margin: 0 auto;
-display: flex;
-justify-content: space-between;
-align-items: center;
+  max-width: 1150px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
 }
 
-.nav-logo {
-color: #fff;
-font-weight: 700;
-text-decoration: none;
-font-size: 20px;
+.nav-logo img {
+  height: 85px;
+  width: auto;
+  display: block;
 }
 
 .nav-links {
-list-style: none;
-display: flex;
-gap: 30px;
-margin: 0;
-padding: 0;
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
-color: #e5e7eb;
-text-decoration: none;
-font-weight: 500;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 15px;
 }
 
 .nav-links a:hover {
-color: #93c5fd;
+  color: #facc15;
 }
 
-/* ================= HEADER ================= */
+/* HERO */
 
-header {
-background: #0f172a;
-color: #fff;
-padding: 80px 24px;
-text-align: center;
+.hero {
+  background:
+    linear-gradient(rgba(2,6,23,0.75), rgba(2,6,23,0.75)),
+    url("lines.jpeg") center/cover no-repeat;
+  color: white;
+  text-align: center;
+  padding: 90px 20px;
 }
 
-header h1 {
-font-size: 36px;
-margin-bottom: 12px;
+.hero h1 {
+  font-size: 54px;
+  margin: 0 0 16px;
 }
 
-header p {
-max-width: 700px;
-margin: 0 auto;
-color: #cbd5e1;
+.hero p {
+  font-size: 20px;
+  max-width: 700px;
+  margin: 0 auto;
+  color: #e5e7eb;
 }
 
-/* ================= GALLERY ================= */
+/* GALLERY */
 
-.container {
-max-width: 1100px;
-margin: 0 auto;
-padding: 60px 24px;
+.gallery-section {
+  padding: 80px 24px;
+}
+
+.gallery-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .gallery-grid {
-display: grid;
-grid-template-columns: repeat(3, 1fr);
-gap: 30px;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
 }
 
 .gallery-item {
-background: #fff;
-border-radius: 12px;
-overflow: hidden;
-box-shadow: 0 12px 30px rgba(0,0,0,0.08);
-height: 260px;
+  background: white;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 28px rgba(15,23,42,0.08);
 }
 
 .gallery-item img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-display: block;
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  display: block;
 }
 
-/* ================= FOOTER ================= */
+.gallery-caption {
+  padding: 18px;
+}
+
+.gallery-caption h3 {
+  margin: 0 0 8px;
+  font-size: 20px;
+}
+
+.gallery-caption p {
+  margin: 0;
+  color: #52616b;
+  line-height: 1.5;
+}
+
+/* CTA */
+
+.cta {
+  background: #020617;
+  color: white;
+  text-align: center;
+  padding: 80px 24px;
+}
+
+.cta h2 {
+  font-size: 42px;
+  margin-bottom: 18px;
+}
+
+.cta p {
+  font-size: 18px;
+  color: #d1d5db;
+  max-width: 700px;
+  margin: 0 auto 30px;
+}
+
+.cta a {
+  display: inline-block;
+  background: #facc15;
+  color: #020617;
+  padding: 15px 30px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 900;
+}
+
+/* FOOTER */
 
 footer {
-background: #020617;
-color: #94a3b8;
-text-align: center;
-padding: 30px 16px;
-font-size: 14px;
+  background: #020617;
+  border-top: 1px solid rgba(255,255,255,0.12);
+  color: #94a3b8;
+  text-align: center;
+  padding: 30px 16px;
+  font-size: 14px;
 }
 
-footer a {
-color: #93c5fd;
-text-decoration: none;
-}
-
-/* ================= MOBILE ================= */
+/* MOBILE */
 
 @media (max-width: 900px) {
-.gallery-grid {
-grid-template-columns: repeat(2, 1fr);
-}
+
+  .gallery-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .hero h1 {
+    font-size: 40px;
+  }
+
+  .nav-logo img {
+    height: 60px;
+  }
+
+  .nav-links {
+    gap: 12px;
+  }
+
+  .nav-links a {
+    font-size: 13px;
+  }
 }
 
-@media (max-width: 600px) {
-.gallery-grid {
-grid-template-columns: 1fr;
-}
-
-.gallery-item {
-height: 220px;
-}
-}
 </style>
 </head>
 
 <body>
 
-<!-- NAV -->
 <nav class="nav">
-<div class="nav-container">
-<a href="index.html" class="nav-logo">LotLogic</a>
-<ul class="nav-links">
-<li><a href="index.html">Home</a></li>
-<li><a href="gallery.html">Gallery</a></li>
-<li><a href="index.html#contact">Get a Quote</a></li>
-</ul>
-</div>
+  <div class="nav-container">
+
+    <a href="index.html" class="nav-logo">
+      <img src="lotlogic-logo.png" alt="LotLogic Logo">
+    </a>
+
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="gallery.html">Gallery</a></li>
+      <li><a href="index.html#services">Services</a></li>
+      <li><a href="index.html#contact">Quote</a></li>
+    </ul>
+
+  </div>
 </nav>
 
-<!-- HEADER -->
-<header>
-<h1>Previous Work</h1>
-<p>
-Recent parking lot striping, sweeping, pressure washing,
-and maintenance projects across the Denver metro area.
-</p>
-</header>
+<section class="hero">
+  <h1>Recent Projects</h1>
+  <p>
+    Parking lot striping, maintenance, sweeping, and pressure washing projects across Colorado.
+  </p>
+</section>
 
-<!-- GALLERY -->
-<div class="container">
+<section class="gallery-section">
+  <div class="gallery-container">
 
-<div class="gallery-grid">
+    <div class="gallery-grid">
 
-<div class="gallery-item">
-<img src="gallery-1.jpeg" alt="Parking lot striping">
-</div>
+      <!-- EXISTING IMAGES -->
 
-<div class="gallery-item">
-<img src="gallery-2.jpeg" alt="Parking lot sweeping">
-</div>
+      <div class="gallery-item">
+        <img src="gallery-1.jpeg" alt="">
+        <div class="gallery-caption">
+          <h3>Parking Lot Striping</h3>
+          <p>Fresh striping and layout improvements for commercial properties.</p>
+        </div>
+      </div>
 
-<div class="gallery-item">
-<img src="gallery-3.jpeg" alt="Pressure washing">
-</div>
+      <div class="gallery-item">
+        <img src="gallery-2.jpeg" alt="">
+        <div class="gallery-caption">
+          <h3>Commercial Maintenance</h3>
+          <p>Keeping parking areas clean, organized, and professional.</p>
+        </div>
+      </div>
 
-<div class="gallery-item">
-<img src="gallery-4.jpeg" alt="Lot maintenance">
-</div>
+      <div class="gallery-item">
+        <img src="gallery-3.jpeg" alt="">
+        <div class="gallery-caption">
+          <h3>Pressure Washing</h3>
+          <p>Surface cleaning and stain removal for lots and garages.</p>
+        </div>
+      </div>
 
-<div class="gallery-item">
-<img src="gallery-5.jpeg" alt="ADA striping">
-</div>
+      <div class="gallery-item">
+        <img src="gallery-4.jpeg" alt="">
+        <div class="gallery-caption">
+          <h3>ADA & Fire Lane Markings</h3>
+          <p>Clean and compliant pavement markings for safety and accessibility.</p>
+        </div>
+      </div>
 
-<div class="gallery-item">
-<img src="gallery-6.jpeg" alt="Commercial parking lot">
-</div>
+      <div class="gallery-item">
+        <img src="gallery-5.jpeg" alt="">
+        <div class="gallery-caption">
+          <h3>Commercial Properties</h3>
+          <p>Projects designed around real parking operations and traffic flow.</p>
+        </div>
+      </div>
 
-</div>
+      <div class="gallery-item">
+        <img src="gallery-6.jpeg" alt="">
+        <div class="gallery-caption">
+          <h3>LotLogic Projects</h3>
+          <p>Serving Denver Metro, Colorado Springs, Fort Collins, and the Front Range.</p>
+        </div>
+      </div>
 
-</div>
+      <!-- NEW IMAGES -->
+
+      <div class="gallery-item">
+        <img src="IMG_2812.JPG" alt="">
+        <div class="gallery-caption">
+          <h3>Recent Project</h3>
+          <p>Professional parking lot services completed by the LotLogic team.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="IMG_2813.JPG" alt="">
+        <div class="gallery-caption">
+          <h3>Commercial Parking Work</h3>
+          <p>Helping properties stay clean, organized, and customer-ready.</p>
+        </div>
+      </div>
+
+      <div class="gallery-item">
+        <img src="IMG_2814.JPG" alt="">
+        <div class="gallery-caption">
+          <h3>Lot Maintenance</h3>
+          <p>Striping and maintenance work built around real operations.</p>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="cta">
+  <h2>Need a Quote?</h2>
+
+  <p>
+    Reach out with a few photos and property details. We’ll help determine the right scope and provide a clear quote.
+  </p>
+
+  <a href="index.html#contact">Request a Quote</a>
+</section>
 
 <footer>
-© LotLogic LLC · Denver, CO<br>
-<a href="mailto:info@lotlogic.io">info@lotlogic.io</a>
+  © LotLogic LLC · Your Lot, Our Logic · Colorado
 </footer>
 
 </body>
