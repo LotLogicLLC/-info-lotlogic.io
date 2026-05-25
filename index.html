@@ -7,6 +7,7 @@
 <meta name="description" content="LotLogic provides parking lot striping, sweeping, pressure washing, signage, and lot maintenance across Denver, Colorado Springs, Fort Collins, and the Front Range.">
 
 <style>
+
 * {
   box-sizing: border-box;
 }
@@ -18,19 +19,21 @@ html {
 body {
   margin: 0;
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
-  background: #f5f7fa;
+  background: #eef2f7;
   color: #1f2933;
   line-height: 1.6;
 }
 
 a {
   color: inherit;
+  text-decoration: none;
 }
 
 /* NAV */
 
 .nav {
-  background: #020617;
+  background: rgba(2,6,23,0.96);
+  backdrop-filter: blur(10px);
   padding: 10px 22px;
   border-bottom: 1px solid rgba(255,255,255,0.08);
   position: sticky;
@@ -62,9 +65,9 @@ a {
 
 .nav-links a {
   color: #fff;
-  text-decoration: none;
   font-weight: 700;
   font-size: 15px;
+  transition: 0.2s ease;
 }
 
 .nav-links a:hover {
@@ -75,25 +78,39 @@ a {
 
 .hero {
   background:
-    linear-gradient(rgba(2,6,23,0.75), rgba(2,6,23,0.75)),
+    linear-gradient(rgba(2,6,23,0.78), rgba(2,6,23,0.78)),
     url("lines.jpeg") center/cover no-repeat;
   color: white;
   text-align: center;
-  padding: 100px 20px;
+  padding: 110px 20px;
+  position: relative;
+}
+
+.hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background:
+    radial-gradient(circle at top right, rgba(250,204,21,0.10), transparent 35%);
+  pointer-events: none;
 }
 
 .hero h1 {
-  font-size: 56px;
-  line-height: 1.08;
-  margin: 0 0 18px;
+  font-size: 58px;
+  line-height: 1.05;
+  margin: 0 0 20px;
   letter-spacing: -1px;
+  position: relative;
+  z-index: 1;
 }
 
 .hero p {
   font-size: 20px;
   max-width: 760px;
-  margin: 0 auto 34px;
+  margin: 0 auto 36px;
   color: #e5e7eb;
+  position: relative;
+  z-index: 1;
 }
 
 .hero-buttons {
@@ -101,6 +118,8 @@ a {
   justify-content: center;
   gap: 14px;
   flex-wrap: wrap;
+  position: relative;
+  z-index: 1;
 }
 
 /* BUTTONS */
@@ -110,29 +129,37 @@ a {
   background: #facc15;
   color: #020617;
   padding: 15px 30px;
-  border-radius: 8px;
-  text-decoration: none;
+  border-radius: 10px;
   font-weight: 900;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.18);
+  transition: 0.2s ease;
+}
+
+.cta:hover {
+  transform: translateY(-2px);
 }
 
 .cta.secondary {
-  background: transparent;
-  border: 2px solid white;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
   color: white;
+  backdrop-filter: blur(6px);
 }
 
 .trust-bar {
-  background: #facc15;
+  background: linear-gradient(to right, #facc15, #fde047);
   color: #020617;
   text-align: center;
-  padding: 14px 24px;
+  padding: 15px 24px;
   font-weight: 900;
+  box-shadow: inset 0 -1px rgba(0,0,0,0.08);
 }
 
 /* GENERAL */
 
 section {
-  padding: 85px 24px;
+  padding: 90px 24px;
+  position: relative;
 }
 
 .container {
@@ -143,13 +170,14 @@ section {
 .section-title {
   text-align: center;
   max-width: 760px;
-  margin: 0 auto 48px;
+  margin: 0 auto 52px;
 }
 
 .section-title h2 {
-  font-size: 40px;
+  font-size: 42px;
   margin: 0 0 14px;
-  line-height: 1.15;
+  line-height: 1.12;
+  color: #020617;
 }
 
 .section-title p {
@@ -159,6 +187,11 @@ section {
 
 /* SERVICES */
 
+.services-section {
+  background:
+    linear-gradient(to bottom, #f8fafc, #edf2f7);
+}
+
 .services-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -166,15 +199,20 @@ section {
 }
 
 .service-card {
-  background: white;
-  border-radius: 16px;
-  padding: 34px;
-  box-shadow: 0 14px 32px rgba(15,23,42,0.08);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(4px);
+  border-radius: 18px;
+  padding: 36px;
+  box-shadow:
+    0 14px 32px rgba(15,23,42,0.08),
+    0 2px 6px rgba(15,23,42,0.04);
+  border: 1px solid rgba(255,255,255,0.7);
 }
 
 .service-card h3 {
   margin-top: 0;
-  font-size: 24px;
+  font-size: 25px;
+  color: #020617;
 }
 
 .service-card p {
@@ -192,7 +230,8 @@ section {
 /* WHY */
 
 .why {
-  background: #0f172a;
+  background:
+    linear-gradient(135deg, #0f172a, #111827);
   color: white;
 }
 
@@ -204,7 +243,7 @@ section {
 }
 
 .why h2 {
-  font-size: 40px;
+  font-size: 42px;
   margin-top: 0;
 }
 
@@ -220,8 +259,10 @@ section {
 
 .checklist {
   background: rgba(255,255,255,0.06);
-  border-radius: 16px;
-  padding: 30px;
+  border: 1px solid rgba(255,255,255,0.08);
+  border-radius: 18px;
+  padding: 32px;
+  backdrop-filter: blur(6px);
 }
 
 .checklist h3 {
@@ -247,7 +288,12 @@ section {
   font-weight: 900;
 }
 
-/* WHO WE WORK WITH */
+/* WHO */
+
+.who-section {
+  background:
+    linear-gradient(to bottom, #ffffff, #f1f5f9);
+}
 
 .who-grid {
   display: grid;
@@ -256,18 +302,21 @@ section {
 }
 
 .who-card {
-  background: white;
-  border-radius: 14px;
-  padding: 24px;
+  background: rgba(255,255,255,0.9);
+  border-radius: 16px;
+  padding: 28px;
   text-align: center;
   font-weight: 700;
-  box-shadow: 0 12px 28px rgba(15,23,42,0.07);
+  box-shadow:
+    0 12px 28px rgba(15,23,42,0.07),
+    0 2px 5px rgba(15,23,42,0.04);
 }
 
 /* HOW IT WORKS */
 
 .how {
-  background: white;
+  background:
+    linear-gradient(to bottom, #f8fafc, #eef2f7);
 }
 
 .steps-grid {
@@ -277,15 +326,17 @@ section {
 }
 
 .step-card {
-  background: #f5f7fa;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 12px 28px rgba(15,23,42,0.06);
+  background: rgba(255,255,255,0.9);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow:
+    0 12px 28px rgba(15,23,42,0.06),
+    0 2px 5px rgba(15,23,42,0.03);
 }
 
 .step-number {
-  width: 42px;
-  height: 42px;
+  width: 44px;
+  height: 44px;
   background: #facc15;
   color: #020617;
   border-radius: 999px;
@@ -296,19 +347,11 @@ section {
   margin-bottom: 18px;
 }
 
-.step-card h3 {
-  margin: 0 0 10px;
-}
-
-.step-card p {
-  margin: 0;
-  color: #52616b;
-}
-
 /* GALLERY */
 
 .gallery-preview {
-  background: #e5e7eb;
+  background:
+    linear-gradient(to bottom, #dfe6ee, #edf2f7);
   text-align: center;
 }
 
@@ -320,10 +363,17 @@ section {
 }
 
 .gallery-item {
-  border-radius: 16px;
+  border-radius: 18px;
   overflow: hidden;
-  box-shadow: 0 12px 28px rgba(15,23,42,0.08);
   background: white;
+  box-shadow:
+    0 12px 28px rgba(15,23,42,0.08),
+    0 2px 6px rgba(15,23,42,0.04);
+  transition: 0.25s ease;
+}
+
+.gallery-item:hover {
+  transform: translateY(-4px);
 }
 
 .gallery-item img {
@@ -335,6 +385,11 @@ section {
 
 /* FAQ */
 
+.faq-section {
+  background:
+    linear-gradient(to bottom, #ffffff, #f1f5f9);
+}
+
 .faq-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -342,25 +397,27 @@ section {
 }
 
 .faq-card {
-  background: white;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 12px 28px rgba(15,23,42,0.07);
+  background: rgba(255,255,255,0.94);
+  border-radius: 18px;
+  padding: 30px;
+  box-shadow:
+    0 12px 28px rgba(15,23,42,0.07),
+    0 2px 5px rgba(15,23,42,0.04);
 }
 
 .faq-card h3 {
   margin-top: 0;
 }
 
-.faq-card p {
-  color: #52616b;
-  margin-bottom: 0;
-}
-
 /* CONTACT */
 
 .contact {
-  background: #020617;
+  background:
+    linear-gradient(135deg, #020617, #111827);
+  color: white;
+}
+
+.contact .section-title h2 {
   color: white;
 }
 
@@ -374,6 +431,8 @@ section {
   background: rgba(255,255,255,0.06);
   border-radius: 18px;
   padding: 34px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255,255,255,0.08);
 }
 
 form input,
@@ -382,7 +441,7 @@ form textarea {
   width: 100%;
   padding: 15px;
   margin-bottom: 14px;
-  border-radius: 8px;
+  border-radius: 10px;
   border: none;
   font-size: 16px;
 }
@@ -393,7 +452,7 @@ form button {
   color: #020617;
   padding: 15px 24px;
   border: none;
-  border-radius: 8px;
+  border-radius: 10px;
   font-size: 17px;
   font-weight: 900;
   cursor: pointer;
@@ -406,7 +465,6 @@ form button {
 
 .contact-info a {
   color: #facc15;
-  text-decoration: none;
   font-weight: 700;
 }
 
@@ -420,7 +478,6 @@ form button {
   color: #020617;
   padding: 16px 24px;
   border-radius: 999px;
-  text-decoration: none;
   font-weight: 900;
   box-shadow: 0 10px 25px rgba(0,0,0,0.25);
   z-index: 9999;
@@ -435,7 +492,7 @@ form button {
 
 footer {
   background: #020617;
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255,255,255,0.08);
   color: #94a3b8;
   padding: 45px 24px;
 }
@@ -457,14 +514,13 @@ footer h4 {
 footer p,
 footer a {
   color: #94a3b8;
-  text-decoration: none;
 }
 
 .footer-bottom {
   max-width: 1150px;
   margin: 32px auto 0;
   padding-top: 20px;
-  border-top: 1px solid rgba(255,255,255,0.12);
+  border-top: 1px solid rgba(255,255,255,0.08);
   text-align: center;
   font-size: 14px;
 }
@@ -537,6 +593,7 @@ footer a {
     font-size: 36px;
   }
 }
+
 </style>
 </head>
 
@@ -577,7 +634,7 @@ footer a {
   Proudly serving Denver Metro, Colorado Springs, Fort Collins, and the Front Range
 </div>
 
-<section id="services">
+<section id="services" class="services-section">
   <div class="container">
 
     <div class="section-title">
@@ -594,45 +651,21 @@ footer a {
       <div class="service-card">
         <h3>Parking Lot Striping</h3>
         <p>Clear, durable striping that improves safety, traffic flow, and curb appeal.</p>
-        <ul>
-          <li>New layouts and re-stripes</li>
-          <li>ADA-compliant markings</li>
-          <li>Fire lanes, curbs, arrows, and stencils</li>
-          <li>Layouts designed by parking professionals</li>
-        </ul>
       </div>
 
       <div class="service-card">
         <h3>Sweeping Services</h3>
         <p>Routine and one-time sweeping programs for commercial properties.</p>
-        <ul>
-          <li>Scheduled sweeping programs</li>
-          <li>One-time cleanups</li>
-          <li>Retail, office, and industrial properties</li>
-          <li>Construction and post-event sweeping</li>
-        </ul>
       </div>
 
       <div class="service-card">
         <h3>Pressure Washing</h3>
         <p>Targeted cleaning that removes buildup and improves the look of your property.</p>
-        <ul>
-          <li>Oil and grease removal</li>
-          <li>Sidewalks and drive lanes</li>
-          <li>Storefronts and entryways</li>
-          <li>Dumpster pads and service areas</li>
-        </ul>
       </div>
 
       <div class="service-card">
         <h3>Lot Maintenance & Repairs</h3>
         <p>Ongoing care to keep your property functional, clean, and professional.</p>
-        <ul>
-          <li>Curb and line touch-ups</li>
-          <li>Signage and wheel stop adjustments</li>
-          <li>Minor asphalt repair coordination</li>
-          <li>Preventive maintenance programs</li>
-        </ul>
       </div>
 
     </div>
@@ -649,14 +682,8 @@ footer a {
         <h2>Why LotLogic?</h2>
 
         <p>
-          LotLogic was built by people who have managed parking operations firsthand.
-          We understand garages, surface lots, tenant expectations, compliance issues,
-          customer complaints, traffic flow, and real-world property challenges.
-        </p>
-
-        <p>
-          That experience leads to smarter layouts, better scheduling, less disruption,
-          and work that supports how your property actually functions.
+          LotLogic was built by parking professionals who understand real-world operations,
+          customer flow, compliance, and commercial property expectations.
         </p>
 
         <p class="highlight">
@@ -669,11 +696,10 @@ footer a {
 
         <ul>
           <li>Parking operations experience</li>
-          <li>Clean, professional layouts</li>
-          <li>Property-manager friendly scheduling</li>
           <li>Commercial-focused service</li>
-          <li>Practical recommendations, not just paint</li>
-          <li>Responsive communication from quote to completion</li>
+          <li>Professional layouts and striping</li>
+          <li>Responsive communication</li>
+          <li>Flexible scheduling</li>
         </ul>
       </div>
 
@@ -682,7 +708,7 @@ footer a {
   </div>
 </section>
 
-<section>
+<section class="who-section">
   <div class="container">
 
     <div class="section-title">
@@ -700,48 +726,6 @@ footer a {
       <div class="who-card">Apartment Communities</div>
       <div class="who-card">HOAs</div>
       <div class="who-card">Industrial Properties</div>
-    </div>
-
-  </div>
-</section>
-
-<section class="how">
-  <div class="container">
-
-    <div class="section-title">
-      <h2>How It Works</h2>
-
-      <p>
-        We make the process simple, clear, and easy for property managers and business owners.
-      </p>
-    </div>
-
-    <div class="steps-grid">
-
-      <div class="step-card">
-        <div class="step-number">1</div>
-        <h3>Send Property Details</h3>
-        <p>Share the address, photos, and a quick description of what you need.</p>
-      </div>
-
-      <div class="step-card">
-        <div class="step-number">2</div>
-        <h3>Review the Scope</h3>
-        <p>We’ll review the property and recommend the right approach for the lot.</p>
-      </div>
-
-      <div class="step-card">
-        <div class="step-number">3</div>
-        <h3>Clear Quote</h3>
-        <p>You’ll receive a straightforward quote with the work, timing, and next steps.</p>
-      </div>
-
-      <div class="step-card">
-        <div class="step-number">4</div>
-        <h3>Schedule the Work</h3>
-        <p>We coordinate timing to reduce disruption for tenants, customers, and staff.</p>
-      </div>
-
     </div>
 
   </div>
@@ -774,48 +758,6 @@ footer a {
 
     </div>
 
-    <p style="margin-top: 32px;">
-      <a class="cta" href="gallery.html">View Full Gallery</a>
-    </p>
-
-  </div>
-</section>
-
-<section>
-  <div class="container">
-
-    <div class="section-title">
-      <h2>Common Questions</h2>
-
-      <p>
-        A few quick answers for property managers and owners planning parking lot work.
-      </p>
-    </div>
-
-    <div class="faq-grid">
-
-      <div class="faq-card">
-        <h3>Can you quote from photos?</h3>
-        <p>Yes. Photos, property address, and basic scope details are usually enough to start the quoting process.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>Do you work nights or weekends?</h3>
-        <p>Yes. We can coordinate scheduling to help reduce disruption for customers, tenants, and daily operations.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>Do you handle parking garages?</h3>
-        <p>Yes. Our parking operations background helps us understand garages, traffic flow, signage, access, and tenant needs.</p>
-      </div>
-
-      <div class="faq-card">
-        <h3>Do you service more than Denver?</h3>
-        <p>Yes. We serve Denver Metro, Colorado Springs, Fort Collins, and communities across the Front Range.</p>
-      </div>
-
-    </div>
-
   </div>
 </section>
 
@@ -826,8 +768,7 @@ footer a {
       <h2>Request a Quote</h2>
 
       <p>
-        Send us a few details about your property. Photos, address, and the type of work needed
-        help us provide a faster and more accurate quote.
+        Send us a few details about your property and we’ll help determine the right scope for the work.
       </p>
     </div>
 
@@ -849,7 +790,6 @@ footer a {
           <option value="Sweeping Services">Sweeping Services</option>
           <option value="Pressure Washing">Pressure Washing</option>
           <option value="Lot Maintenance">Lot Maintenance</option>
-          <option value="Not Sure Yet">Not Sure Yet</option>
         </select>
 
         <textarea name="message" rows="5" placeholder="Tell us about your property..." required></textarea>
@@ -869,6 +809,7 @@ footer a {
 </section>
 
 <footer>
+
   <div class="footer-grid">
 
     <div>
@@ -899,6 +840,7 @@ footer a {
   <div class="footer-bottom">
     © LotLogic LLC · Your Lot, Our Logic · Colorado
   </div>
+
 </footer>
 
 <a href="#contact" class="floating-call">
