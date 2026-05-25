@@ -4,11 +4,9 @@
 <meta charset="UTF-8">
 <title>LotLogic LLC | Parking Lot Striping & Maintenance Colorado</title>
 <meta name="viewport" content="width=device-width, initial-scale=1">
-
 <meta name="description" content="LotLogic provides parking lot striping, sweeping, pressure washing, signage, and lot maintenance across Denver, Colorado Springs, Fort Collins, and the Front Range.">
 
 <style>
-
 * {
   box-sizing: border-box;
 }
@@ -104,6 +102,8 @@ a {
   gap: 14px;
   flex-wrap: wrap;
 }
+
+/* BUTTONS */
 
 .cta {
   display: inline-block;
@@ -247,7 +247,7 @@ section {
   font-weight: 900;
 }
 
-/* WHO */
+/* WHO WE WORK WITH */
 
 .who-grid {
   display: grid;
@@ -262,6 +262,47 @@ section {
   text-align: center;
   font-weight: 700;
   box-shadow: 0 12px 28px rgba(15,23,42,0.07);
+}
+
+/* HOW IT WORKS */
+
+.how {
+  background: white;
+}
+
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 22px;
+}
+
+.step-card {
+  background: #f5f7fa;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 12px 28px rgba(15,23,42,0.06);
+}
+
+.step-number {
+  width: 42px;
+  height: 42px;
+  background: #facc15;
+  color: #020617;
+  border-radius: 999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  margin-bottom: 18px;
+}
+
+.step-card h3 {
+  margin: 0 0 10px;
+}
+
+.step-card p {
+  margin: 0;
+  color: #52616b;
 }
 
 /* GALLERY */
@@ -282,6 +323,7 @@ section {
   border-radius: 16px;
   overflow: hidden;
   box-shadow: 0 12px 28px rgba(15,23,42,0.08);
+  background: white;
 }
 
 .gallery-item img {
@@ -289,6 +331,30 @@ section {
   height: 280px;
   object-fit: cover;
   display: block;
+}
+
+/* FAQ */
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 24px;
+}
+
+.faq-card {
+  background: white;
+  border-radius: 16px;
+  padding: 28px;
+  box-shadow: 0 12px 28px rgba(15,23,42,0.07);
+}
+
+.faq-card h3 {
+  margin-top: 0;
+}
+
+.faq-card p {
+  color: #52616b;
+  margin-bottom: 0;
 }
 
 /* CONTACT */
@@ -311,6 +377,7 @@ section {
 }
 
 form input,
+form select,
 form textarea {
   width: 100%;
   padding: 15px;
@@ -370,8 +437,35 @@ footer {
   background: #020617;
   border-top: 1px solid rgba(255,255,255,0.12);
   color: #94a3b8;
+  padding: 45px 24px;
+}
+
+.footer-grid {
+  max-width: 1150px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1.2fr 1fr 1fr;
+  gap: 28px;
+}
+
+footer h3,
+footer h4 {
+  color: white;
+  margin-top: 0;
+}
+
+footer p,
+footer a {
+  color: #94a3b8;
+  text-decoration: none;
+}
+
+.footer-bottom {
+  max-width: 1150px;
+  margin: 32px auto 0;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255,255,255,0.12);
   text-align: center;
-  padding: 30px 16px;
   font-size: 14px;
 }
 
@@ -382,12 +476,19 @@ footer {
   .services-grid,
   .why-grid,
   .who-grid,
-  .gallery-grid {
+  .steps-grid,
+  .gallery-grid,
+  .faq-grid,
+  .footer-grid {
     grid-template-columns: 1fr;
   }
 
   .hero h1 {
     font-size: 40px;
+  }
+
+  .hero p {
+    font-size: 18px;
   }
 
   .nav-logo img {
@@ -410,6 +511,32 @@ footer {
   }
 }
 
+@media (max-width: 430px) {
+
+  .nav {
+    padding: 8px 14px;
+  }
+
+  .nav-logo img {
+    height: 54px;
+  }
+
+  .nav-links {
+    gap: 9px;
+  }
+
+  .nav-links a {
+    font-size: 12px;
+  }
+
+  .hero {
+    padding: 80px 18px;
+  }
+
+  .hero h1 {
+    font-size: 36px;
+  }
+}
 </style>
 </head>
 
@@ -466,9 +593,7 @@ footer {
 
       <div class="service-card">
         <h3>Parking Lot Striping</h3>
-
         <p>Clear, durable striping that improves safety, traffic flow, and curb appeal.</p>
-
         <ul>
           <li>New layouts and re-stripes</li>
           <li>ADA-compliant markings</li>
@@ -479,9 +604,7 @@ footer {
 
       <div class="service-card">
         <h3>Sweeping Services</h3>
-
         <p>Routine and one-time sweeping programs for commercial properties.</p>
-
         <ul>
           <li>Scheduled sweeping programs</li>
           <li>One-time cleanups</li>
@@ -492,9 +615,7 @@ footer {
 
       <div class="service-card">
         <h3>Pressure Washing</h3>
-
         <p>Targeted cleaning that removes buildup and improves the look of your property.</p>
-
         <ul>
           <li>Oil and grease removal</li>
           <li>Sidewalks and drive lanes</li>
@@ -505,15 +626,192 @@ footer {
 
       <div class="service-card">
         <h3>Lot Maintenance & Repairs</h3>
-
         <p>Ongoing care to keep your property functional, clean, and professional.</p>
-
         <ul>
           <li>Curb and line touch-ups</li>
           <li>Signage and wheel stop adjustments</li>
           <li>Minor asphalt repair coordination</li>
           <li>Preventive maintenance programs</li>
         </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="why">
+  <div class="container">
+
+    <div class="why-grid">
+
+      <div>
+        <h2>Why LotLogic?</h2>
+
+        <p>
+          LotLogic was built by people who have managed parking operations firsthand.
+          We understand garages, surface lots, tenant expectations, compliance issues,
+          customer complaints, traffic flow, and real-world property challenges.
+        </p>
+
+        <p>
+          That experience leads to smarter layouts, better scheduling, less disruption,
+          and work that supports how your property actually functions.
+        </p>
+
+        <p class="highlight">
+          Your lot isn’t just pavement. It’s part of how your property works.
+        </p>
+      </div>
+
+      <div class="checklist">
+        <h3>What Makes Us Different</h3>
+
+        <ul>
+          <li>Parking operations experience</li>
+          <li>Clean, professional layouts</li>
+          <li>Property-manager friendly scheduling</li>
+          <li>Commercial-focused service</li>
+          <li>Practical recommendations, not just paint</li>
+          <li>Responsive communication from quote to completion</li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Who We Work With</h2>
+
+      <p>
+        LotLogic supports commercial properties that need clean, safe, professional parking areas.
+      </p>
+    </div>
+
+    <div class="who-grid">
+      <div class="who-card">Office Buildings</div>
+      <div class="who-card">Retail Centers</div>
+      <div class="who-card">Parking Garages</div>
+      <div class="who-card">Apartment Communities</div>
+      <div class="who-card">HOAs</div>
+      <div class="who-card">Industrial Properties</div>
+    </div>
+
+  </div>
+</section>
+
+<section class="how">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>How It Works</h2>
+
+      <p>
+        We make the process simple, clear, and easy for property managers and business owners.
+      </p>
+    </div>
+
+    <div class="steps-grid">
+
+      <div class="step-card">
+        <div class="step-number">1</div>
+        <h3>Send Property Details</h3>
+        <p>Share the address, photos, and a quick description of what you need.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">2</div>
+        <h3>Review the Scope</h3>
+        <p>We’ll review the property and recommend the right approach for the lot.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">3</div>
+        <h3>Clear Quote</h3>
+        <p>You’ll receive a straightforward quote with the work, timing, and next steps.</p>
+      </div>
+
+      <div class="step-card">
+        <div class="step-number">4</div>
+        <h3>Schedule the Work</h3>
+        <p>We coordinate timing to reduce disruption for tenants, customers, and staff.</p>
+      </div>
+
+    </div>
+
+  </div>
+</section>
+
+<section class="gallery-preview">
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Recent Projects</h2>
+
+      <p>
+        Real parking lot striping, maintenance, and pressure washing projects across Colorado.
+      </p>
+    </div>
+
+    <div class="gallery-grid">
+
+      <div class="gallery-item">
+        <img src="IMG_2812.JPG" alt="">
+      </div>
+
+      <div class="gallery-item">
+        <img src="IMG_2813.JPG" alt="">
+      </div>
+
+      <div class="gallery-item">
+        <img src="IMG_2814.JPG" alt="">
+      </div>
+
+    </div>
+
+    <p style="margin-top: 32px;">
+      <a class="cta" href="gallery.html">View Full Gallery</a>
+    </p>
+
+  </div>
+</section>
+
+<section>
+  <div class="container">
+
+    <div class="section-title">
+      <h2>Common Questions</h2>
+
+      <p>
+        A few quick answers for property managers and owners planning parking lot work.
+      </p>
+    </div>
+
+    <div class="faq-grid">
+
+      <div class="faq-card">
+        <h3>Can you quote from photos?</h3>
+        <p>Yes. Photos, property address, and basic scope details are usually enough to start the quoting process.</p>
+      </div>
+
+      <div class="faq-card">
+        <h3>Do you work nights or weekends?</h3>
+        <p>Yes. We can coordinate scheduling to help reduce disruption for customers, tenants, and daily operations.</p>
+      </div>
+
+      <div class="faq-card">
+        <h3>Do you handle parking garages?</h3>
+        <p>Yes. Our parking operations background helps us understand garages, traffic flow, signage, access, and tenant needs.</p>
+      </div>
+
+      <div class="faq-card">
+        <h3>Do you service more than Denver?</h3>
+        <p>Yes. We serve Denver Metro, Colorado Springs, Fort Collins, and communities across the Front Range.</p>
       </div>
 
     </div>
@@ -545,6 +843,15 @@ footer {
 
         <input type="tel" name="phone" placeholder="Phone number">
 
+        <select name="service" required>
+          <option value="">What service do you need?</option>
+          <option value="Parking Lot Striping">Parking Lot Striping</option>
+          <option value="Sweeping Services">Sweeping Services</option>
+          <option value="Pressure Washing">Pressure Washing</option>
+          <option value="Lot Maintenance">Lot Maintenance</option>
+          <option value="Not Sure Yet">Not Sure Yet</option>
+        </select>
+
         <textarea name="message" rows="5" placeholder="Tell us about your property..." required></textarea>
 
         <button type="submit">Request Quote</button>
@@ -562,7 +869,36 @@ footer {
 </section>
 
 <footer>
-  © LotLogic LLC · Your Lot, Our Logic · Colorado
+  <div class="footer-grid">
+
+    <div>
+      <h3>LotLogic LLC</h3>
+      <p>
+        Parking lot striping, sweeping, pressure washing, and maintenance
+        built around real parking operations.
+      </p>
+    </div>
+
+    <div>
+      <h4>Services</h4>
+      <p>Striping</p>
+      <p>Sweeping</p>
+      <p>Pressure Washing</p>
+      <p>Lot Maintenance</p>
+    </div>
+
+    <div>
+      <h4>Contact</h4>
+      <p><a href="mailto:info@lotlogic.io">info@lotlogic.io</a></p>
+      <p><a href="tel:3033288595">303.328.8595</a></p>
+      <p>Denver Metro · Colorado Springs · Fort Collins · Front Range</p>
+    </div>
+
+  </div>
+
+  <div class="footer-bottom">
+    © LotLogic LLC · Your Lot, Our Logic · Colorado
+  </div>
 </footer>
 
 <a href="#contact" class="floating-call">
