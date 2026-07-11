@@ -983,29 +983,70 @@ footer a {
     <div class="contact-box">
 
 <form action="https://formspree.io/f/mkoevprp" method="POST">
-<input type="hidden" name="_next" value="https://lotlogic.io/thankyou.html">
 
+    <input
+        type="text"
+        name="name"
+        placeholder="Name"
+        required
+    >
 
-        <input type="text" name="name" placeholder="Name" required>
+    <input
+        type="email"
+        name="email"
+        placeholder="Email"
+        required
+    >
 
-        <input type="email" name="email" placeholder="Email" required>
+    <input
+        type="tel"
+        name="phone"
+        placeholder="Phone Number"
+    >
 
-        <input type="tel" name="phone" placeholder="Phone number">
+    <input
+        type="text"
+        name="property"
+        placeholder="Property Address or Property Name"
+        required
+    >
 
-        <select name="service" required>
-          <option value="">What service do you need?</option>
-          <option value="Parking Lot Striping">Parking Lot Striping</option>
-          <option value="Sweeping Services">Sweeping Services</option>
-          <option value="Pressure Washing">Pressure Washing</option>
-          <option value="Lot Maintenance">Lot Maintenance</option>
-          <option value="Not Sure Yet">Not Sure Yet</option>
-        </select>
+    <select name="service" required>
+        <option value="">What service do you need?</option>
+        <option>Parking Lot Striping</option>
+        <option>Sweeping Services</option>
+        <option>Pressure Washing</option>
+        <option>Lot Maintenance</option>
+        <option>Signage</option>
+        <option>Other</option>
+    </select>
 
-        <textarea name="message" rows="5" placeholder="Tell us about your property..." required></textarea>
+    <select name="heard_about_us">
+        <option value="">How did you hear about us?</option>
+        <option>Google Search</option>
+        <option>Google Maps</option>
+        <option>Referral</option>
+        <option>Property Manager</option>
+        <option>Saw Our Trailer</option>
+        <option>Saw Us Working</option>
+        <option>Facebook</option>
+        <option>Instagram</option>
+        <option>LinkedIn</option>
+        <option>Other</option>
+    </select>
 
-        <button type="submit">Request Quote</button>
+    <textarea
+        name="message"
+        rows="5"
+        placeholder="Tell us about your project..."
+        required
+    ></textarea>
 
-      </form>
+    <button type="submit">
+        Request Quote
+    </button>
+
+</form>
 
       <div class="contact-info">
         <p>Email: <a href="mailto:info@lotlogic.io">info@lotlogic.io</a></p>
